@@ -43,7 +43,7 @@ REATE TABLE books (\
 Creating  Table Customer\
 \
 \pard\pardeftab720\partightenfactor0
-\cf0 \outl0\strokewidth0 \strokec2 CREATE TABLE Customers (\
+\cf0 CREATE TABLE Customers (\
     customer_id      INTEGER PRIMARY KEY AUTOINCREMENT,\
     first_name       TEXT    NOT NULL\
                              CHECK (length(trim(first_name) ) > 0),\
@@ -51,7 +51,7 @@ Creating  Table Customer\
                              CHECK (length(trim(last_name) ) > 0),\
     email            TEXT    UNIQUE\
                              NOT NULL\
-                             CHECK (email LIKE '%_@_%._%'),\
+                             CHECK (email LIKE \'91%_@__%._%\'92),\
     phone            TEXT    CHECK (phone IS NULL OR\
                                     length(phone) >= 7),\
     shipping_address TEXT    NOT NULL\
@@ -76,8 +76,7 @@ CREATE TABLE Orders (\
 );\
 \
 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \outl0\strokewidth0 \
+\
 \
 \
 \

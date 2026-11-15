@@ -1,0 +1,26 @@
+9. Data Analysis Report
+Comprehensive analysis report that demonstrates both your technical Excel & SQL skills and business analysis capabilities.
+
+Dataset Introduction: This synthetic dataset comprises 2,099 records of personal and financial data, designed to facilitate the development of
+                        predictive models for risk assessment. It serves primary purposes, to predict a continuous risk score associated with each individual's likelihood of loan default or financial instability and to determine the binary outcome of loan approval, indicating whether an applicant is likely to be approved or denied for a loan.
+Source of the data:  Kaggle.com
+Size (number of tables and approximate records): 1 Table, 2099 rows, 17 colomns and total records of 35700. 
+
+General subject matter (e.g., "retail sales data," "healthcare patient records"): Financial risk for loan approval 
+Analysis Objectives: Outcome of loan approval "Yes" or "No".
+Business questions being investigated:
+    1. At what purpose applicant appling for loan, what amount.
+    2. what is status of application who appling home only.
+    3. which loan is highest requested by applicats.
+    4. on bases loans are approved and what amount of loans are approved.
+    5. what the requirment for loan approval.
+Patterns or trends the analysis hopes to uncover:
+    The chart in excel Age vs No. of loan approval in loan purpose, the trends shows that maximum number of applicats are appling for home loans.
+    and maximum applicats who apply for loans are employed. The risk ratio is low in this segments.
+
+Business Recommendations:
+Strategic suggestions based on your complete analysis:
+Actionable insights for stakeholders derived from your findings:
+    As per analysis, loan company has to focus on salling Home and debt consolidation loan and get in touch in employed applicants.
+    This applicants are low risk and high in demand. This will give recuring revenue to compnay for long tearms.
+

@@ -1,0 +1,142 @@
+/* Creating Table Artists */
+
+CREATE TABLE Artists (
+    artist_id    INTEGER PRIMARY KEY AUTOINCREMENT,
+    artist_name  TEXT    NOT NULL
+                         CHECK (length(trim(artist_name) ) > 0),
+    genre        TEXT    NOT NULL
+                         CHECK (length(trim(genre) ) > 0),
+    country      TEXT    NOT NULL
+                         CHECK (length(trim(artist_name) ) > 0),
+    active_since DATE    NOT NULL
+);
+
+/* Creating Table Songs */
+
+CREATE TABLE Songs (
+    song_id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    title            TEXT    NOT NULL
+                             CHECK (length(trim(title) ) > 0),
+    artist_id        INTEGER REFERENCES Artists (artist_id) ON DELETE RESTRICT
+                             NOT NULL,
+    album            TEXT    CHECK (length(trim(album) ) > 0),
+    release_date     DATE,
+    duration_seconds INTEGER,
+    popularity_score INTEGER
+);
+
+
+
+/* Creating Table Customers */
+
+CREATE TABLE Customers (
+    customers_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT NOT NULL
+        CHECK (length(trim(first_name) ) > 0),
+    last_name TEXT NOT NULL
+        CHECK (length(trim(last_name) ) > 0),
+    email_id TEXT NOT NULL
+        CHECK (email_id like '%_@__%._%'),
+    join_date     DATE,
+    premium_member boolean
+);
+
+/* Creating Table Purchases */
+
+CREATE TABLE Purchases (
+    purchase_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer_id INTEGER REFERENCES Customers (customer_id) ON DELETE RESTRICT,
+    song_id INTEGER REFERENCES Songs (song_id) ON DELETE RESTRICT,
+    purchase_date DATE,
+    price real not null
+        check(price > 0.0)
+);
+
+/* Creating Table Streams */
+
+CREATE TABLE Streams (
+    stream_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer_id INTEGER REFERENCES Customers (customer_id) ON DELETE RESTRICT,
+    song_id INTEGER REFERENCES Songs (song_id) ON DELETE RESTRICT,
+    stream_date DATE,
+    stream_time time
+);
+
+
+/* Import data in all the tables*/
+
+
+Import -> path of files_name.cvs-> select coma seperated -> finished
+
+
+/* Workshop Tasks*/
+
+/* 1.Basic Selection: Retrieve the titles and release dates of all songs released in 2022, ordered by release date (newest first).*/
+
+Select title, release_date
+from Songs where release_date like "2022%"
+order by release_date desc;
+
+
+/* 2.Filtering: Find all songs with a popularity score greater than 80 and a duration less than 4 minutes (240 seconds).*/
+
+select title, popularity_score, duration_seconds
+from Songs
+where popularity_score > "80" and duration_seconds < "240";
+
+
+/* 3.Pattern Matching: List all artists whose names start with "The".*/
+
+Select artist_name
+from Artists
+where artist_name like "The%";
+
+/* 4.Multiple Conditions: Find all premium customers who joined in 2022.*/
+
+Select first_name, last_name, join_date,premium_member
+from Customers
+where premium_member like "true%" and join_date like "2022%";
+
+
+/* 5.Calculations and Aliasing: Calculate the total duration (in minutes) of all songs in the database and display the result with an appropriate column name.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
